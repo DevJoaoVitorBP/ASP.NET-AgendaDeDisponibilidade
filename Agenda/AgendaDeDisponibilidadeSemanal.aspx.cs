@@ -11,25 +11,25 @@ namespace Agenda
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Button1.Click += new EventHandler(Button1_Click);
+            btnEnviar.Click += new EventHandler(btnEnviar_Click);
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnEnviar_Click(object sender, EventArgs e)
         {
-            Label2.Text = "Dias selecionados: ";
+            lblMensagem.Text = "Dias selecionados: ";
             foreach (ListItem item in CheckBoxList1.Items)
             {
                 if (item.Selected)
                 {
-                    Label2.Text += item.Text + ", ";
+                    lblMensagem.Text += item.Text + ", ";
                 }
             }
             // Remove a última vírgula e espaço
-            if (Label2.Text.EndsWith(", "))
+            if (lblMensagem.Text.EndsWith(", "))
             {
-                Label2.Text = Label2.Text.Substring(0, Label2.Text.Length - 2);
+                lblMensagem.Text = lblMensagem.Text.Substring(0, lblMensagem.Text.Length - 2);
             }
-            Label2.Text += ".";
+            lblMensagem.Text += ".";
         }
     }
 }
